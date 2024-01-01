@@ -7,10 +7,7 @@ let number = document.getElementById("number");
 let email = document.getElementById("email")
 let cmnt = document.getElementById("comments");
 
-// let name_error = document.getElementById("name_error");
-// let number_error = document.getElementById("number_error");
-// let email_error = document.getElementById("email_error");
-// let cmnt_error = document.getElementById("cmnt_error");
+
 let warningText = document.getElementById("warningText");
 
 let submit_btn = document.getElementById("submit_button");
