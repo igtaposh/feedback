@@ -7,10 +7,11 @@ let number = document.getElementById("number");
 let email = document.getElementById("email")
 let cmnt = document.getElementById("comments");
 
-let name_error = document.getElementById("name_error");
-let number_error = document.getElementById("number_error");
-let email_error = document.getElementById("email_error");
-let cmnt_error = document.getElementById("cmnt_error");
+// let name_error = document.getElementById("name_error");
+// let number_error = document.getElementById("number_error");
+// let email_error = document.getElementById("email_error");
+// let cmnt_error = document.getElementById("cmnt_error");
+let warningText = document.getElementById("warningText");
 
 let submit_btn = document.getElementById("submit_button");
 let reset_btn = document.getElementById("reset_button");
@@ -28,74 +29,75 @@ let rateImage5 = document.getElementById("rateImage5");
 
 let rateMsg = document.getElementById("rateMsg");
 
- next_btn.addEventListener('click', ()=>{
-   let valTrue = 0;
-   let valTrue1 = 0;
-   let valTrue2 = 0;
-   let result;
-   
-    if (name.value.trim() == '' || name.value.trim() == null) {
-   name_error.innerHTML= "* Name is required to fill";
- } else {
-   name_error.innerHTML= '';
-  valTrue = 1;
-   
- }
- if (number.value.trim() == '' || number.value.trim() == null) {
-   number_error.innerHTML = "* Enter a valid number";
- }
- else if (number.value.length !== 10) {
-   number_error.innerHTML = "* Enter a valid 10 digit number";
+next_btn.addEventListener('click', () => {
+  let valTrue = 0;
+  let valTrue1 = 0;
+  let valTrue2 = 0;
+  let result;
 
- } else {
-   number_error.innerHTML = "";
-   valTrue1 = 1;
- }
- 
- if (email.value == '' || email.value == null) {
-   email_error.innerHTML = "* Enter a valid Email";
- 
- }
- else {
-   email_error.innerHTML = "";
-   valTrue2 = 1;
-   
- }
- result = valTrue + valTrue1 + valTrue2;
- if (result == 3) {
-   nextButton();
- }
- });
- 
+  if (name.value.trim() == '' || name.value.trim() == null) {
+    warningText.textContent = 'enhdhgchd';
+    warningText.style.display = 'block';
+  } else {
+    warningText.style.display = 'none';
+    valTrue = 1;
 
-function nextButton(windowStop){
-  next_btn.addEventListener('click',()=>{
+  }
+  if (number.value.trim() == '' || number.value.trim() == null) {
+    number_error.style.display = 'inline-block';
+  }
+  else if (number.value.length !== 10) {
+    number_error.innerHTML = "* Enter a valid 10 digit number";
+
+  } else {
+    number_error.style.display = 'none';
+    valTrue1 = 1;
+  }
+
+  if (email.value == '' || email.value == null) {
+    email_error.style.display = 'inline-block';
+
+  }
+  else {
+    email_error.style.display = 'none';
+    valTrue2 = 1;
+
+  }
+  result = valTrue + valTrue1 + valTrue2;
+  if (result == 3) {
+    nextButton();
+  }
+});
+
+
+function nextButton(windowStop) {
+  next_btn.addEventListener('click', () => {
     section.classList.add("section_dis_none");
-  }) 
+  })
 }
 
-back_btn.addEventListener('click', ()=>{
+back_btn.addEventListener('click', () => {
   section.classList.remove("section_dis_none");
 })
 
-reset_btn.addEventListener('click', ()=>{
+reset_btn.addEventListener('click', () => {
   location.reload();
 })
-submit_btn.addEventListener('click', ()=>{
+submit_btn.addEventListener('click', () => {
   submitBtn(event);
 })
 
 function submitBtn(event) {
   if (cmnt.value == '' || cmnt.value == null) {
-    cmnt_error.innerHTML ="Your problems could be solve if you write something"
+    cmnt_error.style.display = 'inline-block';
     event.preventDefault();
   }
   else {
-    cmnt_error.innerHTML = '';
+    cmnt_error.style.display = 'none';
     loader.style.display = "block";
   }
 }
-rateImage.addEventListener('click', ()=>{
+rateImage.addEventListener('click', () => {
   rateImage2.classList.remove("primarycolor")
   rateImage3.classList.remove("primarycolor")
   rateImage4.classList.remove("primarycolor")
@@ -104,13 +106,13 @@ rateImage.addEventListener('click', ()=>{
   rateMsg.innerHTML = "Awfull"
 })
 
-rateImage2.addEventListener('click', ()=>{
+rateImage2.addEventListener('click', () => {
   rateImage.classList.remove("primarycolor")
   rateImage3.classList.remove("primarycolor")
   rateImage4.classList.remove("primarycolor")
   rateImage5.classList.remove("primarycolor")
   rateImage2.classList.add("primarycolor")
-  rateMsg.innerHTML="it's not that good"
+  rateMsg.innerHTML = "it's not that good"
 })
 rateImage3.addEventListener('click', () => {
   rateImage.classList.remove("primarycolor")
@@ -137,7 +139,7 @@ rateImage5.addEventListener('click', () => {
   rateMsg.innerHTML = "It was fabulous"
 })
 
-cmnt.addEventListener('input', ()=>{
+cmnt.addEventListener('input', () => {
   let fResult = cmnt.value.length + '/' + '300';
   wordCount.innerHTML = fResult;
   if (cmnt.value.length > 300) {
@@ -148,12 +150,12 @@ cmnt.addEventListener('input', ()=>{
     wordCount.classList.remove('redandshake')
     cmnt.classList.remove("commentoutlinered");
   }
-  
+
 })
-cmnt.addEventListener('focus', ()=>{
+cmnt.addEventListener('focus', () => {
   section.classList.add("section_upside");
 })
-cmnt.addEventListener('focusout', ()=>{
+cmnt.addEventListener('focusout', () => {
   section.classList.remove("section_upside");
 })
 

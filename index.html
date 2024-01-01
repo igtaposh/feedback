@@ -5,74 +5,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Feedback V2.0</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
+
 <body>
-    <div id="loader">
-    <div class="lds-ripple"><div></div><div></div></div>
+    <div id="warningText">
+      <strong>Error!</strong><p>A problem has been occurred while submitting your.</p>
+      <span><img src="close.svg" alt=""></span>
+    </div>
+  <div id="loader">
+    <div class="lds-ripple">
+      <div></div>
+      <div></div>
+    </div>
   </div>
   <section class="headerText">
     <h2>MAKE US BETTER!</h2>
     <P>Fill this form with your details and gave us suggestions - we want to make it better</P>
   </section>
-<form id="form">
-  <div class="profileIcon">
-    <img src="profile.svg">
-  </div>
-  <div id="name_section">
-  <input type="text" name="first_name" id="name">
-  <input type="text" name="last_name" id="name">
-  <span class="span" id="name_error"></span>
-  </div>
-  
-  <div>
-  <lebel>Enter Your Mobile Number</lebel>
-  <input type="number" name="number" id="number">
-  <span class="span" id="number_error"></span>
-  </div>
-  
-  <div>
-  <lebel>Enter Your Email ID</lebel>
-  <input style="text-transform: lowercase" type="text" name="email" id="email">
-  <span class="span" id="email_error"></span>
-   </div>
-   
-   
-  <div id="btn_section">
-  <button id="reset_button" type="reset">CLEAR</button>
-  <button type="button" id="next_button" >NEXT</button>
-  </div>
-  
-  <section style="gap: 15px" class="sectionCmnt" id="section">
-     <lebel>How was your experience?</lebel>
-    <div style="gap: 10px;" class="rateSystem">
-      <div style="flex-direction: row; gap: 5px;">
-        <img id="rateImage" src="angry.svg">
-        <img id="rateImage2" src="face-confounded.svg">
-        <img id="rateImage3" src="face-glasses.svg">
-        <img id="rateImage4" src="face-awesome.svg">
-        <img id="rateImage5" src="face-explode.svg">
-      </div>
-      <span id="rateMsg"></span>
+  <form id="form">
+    <div class="profileIcon">
+      <img src="profile.svg">
     </div>
+    <div id="name_section">
+      <input type="text" name="first_name" id="name">
+      <input type="text" name="last_name" id="name">
+
+    </div>
+
     <div>
-       <textarea maxlength="301" name="comments" id="comments" rows="7" placeholder="Add your massage..."></textarea>
-       <p id="wordcount"></p>
-       <span class="span" id="cmnt_error"></span>
-       <div id="btn2_section">
-       <button id="back_button" type="button">Back</button>
-       <button type="submit" id="submit_button">SUBMIT</button>
-       </div>
+      <lebel>Enter Your Mobile Number</lebel>
+      <input type="number" name="number" id="number">
+      <span class="span" id="number_error">* Enter a valid number</span>
     </div>
-  </section>
-  
-  
-   
-  
-</form>
-<script src="script.js"></script>
+
+    <div>
+      <lebel>Enter Your Email ID</lebel>
+      <input style="text-transform: lowercase" type="text" name="email" id="email">
+      <span class="span" id="email_error">* Enter a valid Email</span>
+    </div>
+
+
+    <div id="btn_section">
+      <button id="reset_button" type="reset">CLEAR</button>
+      <button type="button" id="next_button">NEXT</button>
+    </div>
+
+    <section style="gap: 15px" class="sectionCmnt" id="section">
+      <lebel>How was your experience?</lebel>
+      <div style="gap: 10px;" class="rateSystem">
+        <div style="flex-direction: row; gap: 5px;">
+          <img id="rateImage" src="angry.svg">
+          <img id="rateImage2" src="face-confounded.svg">
+          <img id="rateImage3" src="face-glasses.svg">
+          <img id="rateImage4" src="face-awesome.svg">
+          <img id="rateImage5" src="face-explode.svg">
+        </div>
+        <span id="rateMsg"></span>
+      </div>
+      <div>
+        <textarea maxlength="301" name="comments" id="comments" rows="7" placeholder="Add your massage..."></textarea>
+        <p id="wordcount"></p>
+        <span class="span" id="cmnt_error">Your problems could be solve if you write something</span>
+        <div id="btn2_section">
+          <button id="back_button" type="button">Back</button>
+          <button type="submit" id="submit_button">SUBMIT</button>
+        </div>
+      </div>
+    </section>
+
+
+
+
+  </form>
+  <script src="script.js"></script>
 </body>
 
 </html>
